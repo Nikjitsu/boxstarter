@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Boxstarter.Chocolatey</id>
+    <version>$version$</version>
+    <authors>Matt Wrock</authors>
+    <owners>Matt Wrock</owners>
+    <iconUrl>https://cdn.rawgit.com/mwrock/boxstarter/master/Web/Images/boxLogo_sm.png</iconUrl>
+    <title>Boxstarter Chocolatey Module</title>
+    <projectUrl>http://Boxstarter.org</projectUrl>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <description>Creates a fresh developer (or non developer) environment from a bare OS utilizing powershell and chocolatey. Installs chocolatey, cutomizes windows settings, installs windows updates, handles reboots, installs windows features and your favorite applications.</description>
+    <tags>Boxstarter environment setup</tags>
+    <dependencies>
+      <dependency id="Boxstarter.Common" version="[$version$]" />
+      <dependency id="Boxstarter.WinConfig" version="[$version$]" />
+      <dependency id="Boxstarter.Bootstrapper" version="[$version$]" />
+    </dependencies>
+    <releaseNotes>
+- Revert vendored chocolatey to stable 0.10.5
+- Fix HRESULT code for WU_E_INSTALL_NOT_ALLOWED
+- Handle the case where the Windows Update Agent is updating itself
+- Install boxstarter to macine instead of user
+</releaseNotes>
+  </metadata>
+  <files>
+    <file src="..\chocolateyinstall.ps1" target="tools" />
+    <file src="..\Setup.ps1" target="tools" />
+    <file src="..\..\boxstarter.bat" target="tools" />
+    <file src="..\..\boxstarter.config" target="tools" />
+    <file src="..\..\LICENSE.txt" target="tools" />
+    <file src="..\..\BoxstarterShell.ps1" target="tools" />
+    <file src="..\..\BoxLogo.ico" target="tools" />
+    <file src="..\..\Boxstarter.Chocolatey\**\*.*" target="tools\Boxstarter.Chocolatey" />
+  </files>
+</package>

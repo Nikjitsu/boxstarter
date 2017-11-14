@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Boxstarter.HyperV</id>
+    <version>$version$</version>
+    <authors>Matt Wrock</authors>
+    <owners>Matt Wrock</owners>
+    <title>Boxstarter HyperV Module</title>
+    <iconUrl>https://cdn.rawgit.com/mwrock/boxstarter/master/Web/Images/boxLogo_sm.png</iconUrl>
+    <projectUrl>http://Boxstarter.org</projectUrl>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <description>Boxstarter's HyperV module includes functionality for targeting Hyper-V guest VMs with the ability to automatically configure them for remote installation and to create or restore snapshots at installation time.</description>
+    <tags>Boxstarter bootstrapper environment setup VM virtualization HyperV</tags>
+    <dependencies>
+      <dependency id="Boxstarter.Common" version="[$version$]" />
+      <dependency id="Boxstarter.Chocolatey" version="[$version$]" />
+    </dependencies>
+    <releaseNotes>
+- Revert vendored chocolatey to stable 0.10.5
+- Fix HRESULT code for WU_E_INSTALL_NOT_ALLOWED
+- Handle the case where the Windows Update Agent is updating itself
+- Install boxstarter to macine instead of user
+</releaseNotes>
+  </metadata>
+  <files>
+    <file src="..\..\LICENSE.txt" target="tools" />
+    <file src="..\chocolateyinstall.ps1" target="tools" />
+    <file src="..\Setup.ps1" target="tools" />
+    <file src="..\..\Boxstarter.HyperV\**\*.*" target="tools\Boxstarter.HyperV" />
+  </files>
+</package>

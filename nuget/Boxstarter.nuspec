@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Boxstarter</id>
+    <version>$version$</version>
+    <authors>Matt Wrock</authors>
+    <owners>Matt Wrock</owners>
+    <iconUrl>https://cdn.rawgit.com/mwrock/boxstarter/master/Web/Images/boxLogo_sm.png</iconUrl>
+    <title>Boxstarter</title>
+    <projectUrl>http://Boxstarter.org</projectUrl>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <description>Repeatable, reboot resilient windows environment installations made easy using Chocolatey packages. When its time to repave either bare metal or virtualized instances, locally or on a remote machine, Boxstarter can automate both trivial and highly complex installations. Compatible with all Windows versions from Windows 7/2008 R2 forward.</description>
+    <tags>Boxstarter environment setup</tags>
+    <dependencies>
+      <dependency id="Boxstarter.Common" version="[$version$]" />
+      <dependency id="Boxstarter.WinConfig" version="[$version$]" />
+      <dependency id="Boxstarter.Bootstrapper" version="[$version$]" />
+      <dependency id="Boxstarter.Chocolatey" version="[$version$]" />
+      <dependency id="Boxstarter.HyperV" version="[$version$]" />
+    </dependencies>
+    <releaseNotes>
+- Revert vendored chocolatey to stable 0.10.5
+- Fix HRESULT code for WU_E_INSTALL_NOT_ALLOWED
+- Handle the case where the Windows Update Agent is updating itself
+- Install boxstarter to macine instead of user
+</releaseNotes>
+  </metadata>
+  <files>
+    <file src="..\BoxstarterChocolateyinstall.ps1" target="tools\chocolateyinstall.ps1" />
+  </files>
+</package>
